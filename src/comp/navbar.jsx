@@ -1,13 +1,8 @@
 import React from 'react';
 import '../index.css';
 
-function Navbar() {
-  const navItems = [
-    { text: 'Home', link: '/' },
-    { text: 'About', link: '/about' },
-    { text: 'Contact', link: '/contact' },
-    // Add more items as needed
-  ];
+function Navbar({navItems}) {
+  
 
   const renderNavItems = () => {
     return navItems.map((item, index) => (

@@ -1,7 +1,7 @@
 import React from 'react';
 import '../index.css'; // Import your CSS file
 
-function Navbar3() {
+function Navbar3({navItem3}) {
   const NavItem = ({ text, link }) => (
     <li className='nbr3-item'>
       <a href={link} className='nbr3-link'>
@@ -10,18 +10,13 @@ function Navbar3() {
     </li>
   );
 
-  const navItems = [
-    { text: 'Home', link: '/' },
-    { text: 'About', link: '/about' },
-    { text: 'Contact', link: '/contact' },
-    // Add more items as needed
-  ];
+  
 
   return (
     <div className='nbr3'>
       <nav className='nbr3-nav'>
         <ul className='nbr3-list'>
-          {navItems.map((item, index) => (
+          {navItem3.map((item, index) => (
             <NavItem key={index} text={item.text} link={item.link} />
           ))}
         </ul>

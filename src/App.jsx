@@ -1,26 +1,24 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import Navbar from './comp/navbar'
-import Header from './comp/header'
-import Navbar2 from './comp/navbar2'
-import Navbar3 from './comp/navbar3'
-import Adbox from './comp/adbox'
-import Bodycont from './comp/bodycont'
-import Postlist from './comp/postlist'
+import { useState } from 'react';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import './App.css';
+
+import Main from './comp/main';
+import UAE from './comp/uae';
+import World from './comp/world';
+
 function App() {
-  const [count, setCount] = useState(0)
+
 
   return (
-    <>
-     <Navbar/>
-     <Header/>
-     <Navbar2/>
-     <Navbar3/>
-     <Bodycont/>      
-    </>
-  )
+    <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Main/>} />
+         <Route path="/uae" element={<UAE />} />
+         <Route path="/world" element={<World />} />
+          </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;

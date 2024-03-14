@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-function Header() {
+function Header({title}) {
   const [currentDate, setCurrentDate] = useState(new Date());
 
   useEffect(() => {
@@ -23,7 +23,7 @@ function Header() {
 
   return (
     <div style={{ textAlign: 'center' }}>
-      <h1>SHARJA</h1>
+      <h1>{title}</h1>
       <p>{formattedDate}</p>
     </div>
   );

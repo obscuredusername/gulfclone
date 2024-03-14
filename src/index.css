@@ -189,4 +189,15 @@
   border-right: 1px solid black;
   border-top: 3px solid #e56501; 
 }
-
+.sbsect
+{
+  border-top:  3px solid black;
+}
+.sb-title
+{
+  font-weight: 500;
+  font-size: 27px;
+  margin-top: 10px !important;
+  padding-bottom: 10px !important;
+  border-bottom: 1px solid #ccc !important;
+}
