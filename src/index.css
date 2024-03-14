@@ -1,0 +1,192 @@
+.nbr {
+  background: #001627;
+  height: 45px;
+  font-family: Montserrat, Arial, sans-serif;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+
+  padding: 0 1rem;
+  margin-top: -8px;
+  margin-left: -8px;
+}
+
+.nbr-coupon {
+  color: #fff;
+  font-size: 0.8rem;
+  margin-top: 20px;
+  margin-left: 176px;
+}
+
+.nbr-bn {
+  display: flex;
+  color: #fff;
+  margin-top: 5px;
+  font-size: 0.8rem;
+}
+
+.nav-link {
+  color: #fff;
+  font-size: 0.8rem;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+.nav-link:hover {
+  text-decoration: none;
+}
+/* Navbar2.css (or add to your existing CSS file) */
+
+/* ... (existing styles) */
+
+.nbr2 {
+  border-top: 3px solid #000;
+  padding: 1rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  background-color: #fff; /* Add a background color for better visibility */
+}
+
+.nbr2-nav {
+  display: flex;
+  justify-content: space-between; /* Distribute items evenly */
+}
+
+.nbr2-list {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nbr2-item {
+  margin-right: 15px;
+}
+
+.nbr2-link {
+  text-decoration: none;
+  font-size: 1rem;
+  color: #000;
+  font-weight: 500;
+}
+
+.nbr2-link:hover {
+  color: #007bff; /* Change link color on hover */
+}
+
+
+/* Navbar3.css (or add to your existing CSS file) */
+
+/* Navbar3.css (or add to your existing CSS file) */
+
+.nbr3 {
+  border-top: 1px solid #dedada; /* Black border at the top */
+  border-bottom: 1px solid #dedada; /* Black border at the bottom */
+  padding: 1rem; /* Adjust padding as needed */
+  max-width: 1100px; /* Set a maximum width */
+  margin: 0 auto; /* Center the navbar */
+  height: 40px !important;
+}
+
+.nbr3-nav {
+  display: flex;
+}
+
+.nbr3-list {
+  list-style: none;
+  display: flex;
+  margin: -10px;
+  padding: 0;
+}
+
+.nbr3-item {
+  margin-bottom: 20px;
+  padding-right: 10px;
+  padding-left: 10px;
+
+  border-right: 1px solid grey; 
+}
+
+.nbr3-link {
+  text-decoration: none;
+  font-size: 13.5px; 
+  color: grey;
+}
+/* Your existing styles for .navbar3 or other components */
+
+.nbr3-bn {
+  background-color: #9c0331;
+  color: #fff;
+  border: none;
+  margin-top: -16px;
+  width: 200px;
+  padding: 0.5rem 1rem;
+  margin-left: auto; /* Push the button to the right */
+  cursor: pointer;
+  height: 38px;
+}
+
+/* Your existing styles */
+
+/* Your existing styles */
+
+/* Existing styles */
+
+.Bodycont {
+  width: 1130px;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  padding: 20px;
+  box-sizing: border-box;
+  margin-top: 25px;
+}
+.bodymain
+{
+  border-bottom: 1px solid #ccc !important;
+ 
+}
+
+.p1 {
+
+  padding: 0 !important;
+  border-right: 1px solid #ccc !important;
+
+}
+
+.p1Heading {
+  font-size: 2.25rem;
+}
+.pimg
+{
+  border-top: 3px solid #e56501;
+  margin-top: 20px;
+}
+.p1Sum {
+  font-size: 1rem;
+  color: #333;
+}
+.p2{
+  border-bottom: 1px solid #ccc !important;
+  margin-right: 10px;
+}
+.p2headin
+{
+  border-bottom: 1px solid #ccc !important;
+  margin-right: 20px;
+  
+
+}
+.p2heading
+{
+  font-size: 1.45rem !important;
+  margin-right: 20px;
+
+}
+.p2ig{
+  width: 146px;
+  height: 112px;
+  margin-right: 20px;
+  border-right: 1px solid black;
+  border-top: 3px solid #e56501; 
+}
+
