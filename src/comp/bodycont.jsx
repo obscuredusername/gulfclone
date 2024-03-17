@@ -7,6 +7,10 @@ import Postlist from './postlist';
 import Subsection from './subsection';
 
 function Bodycont({ body }) {
+
+
+  console.log("malikkkkkkkkkkkkkk")
+  console.log(body)
   return (
     <div className='container mt-5' style={{ maxWidth: '75%' }}>
       <Adbox />

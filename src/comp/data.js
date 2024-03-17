@@ -142,7 +142,10 @@ export const navItem2 = [
           "titleText": "Camel Riding in the Desert"
         }
       ]
-    },
+    }
+    
+    
+    ,
     {
       "heading": "World",
       "content": [
