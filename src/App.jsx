@@ -1,28 +1,20 @@
-import { useState } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+// import {UAE,Main} from "./components";
 
-import './App.css';
-
-import Main from './comp/main';
-import Uae from '../src/comp/Uae';
-import World from './comp/world';
-import Sports from './comp/Sports';
-import Ujobs from './comp/ujob';
-import Tech from './comp/tech';
+import UAE from "./components/Uae"
+import Main from "./components/Main"
 
 function App() {
-
-
   return (
     <BrowserRouter>
-        <Routes>
-         <Route path="/" element={<Main/>} />
-         <Route path="/uae" element={<Uae />} />
-         <Route path="/world" element={<World />} />
-         <Route path="/Sports" element={<Sports/>} />
-         <Route path="/Ujobs" element={<Ujobs/>} />
-         <Route path="/tech" element={<Tech/>} />
-          </Routes>
+      <Routes>
+        <Route path="/" element={<Main />} />
+        <Route path="/uae" element={<UAE />} />
+        {/* <Route path="/world" element={<World />} />
+        <Route path="/Sports" element={<Sports />} />
+        <Route path="/Ujobs" element={<Ujobs />} />
+        <Route path="/tech" element={<Tech />} /> */}
+      </Routes>
     </BrowserRouter>
   );
 }
