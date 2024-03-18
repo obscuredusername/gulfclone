@@ -1,0 +1,121 @@
+{
+    "world": [
+      [
+        {
+          "id": 1,
+          "picture": "/pi1.jpg",
+          "summary": "Exciting news from around the world.",
+          "title": "First headline for world news"
+        }
+      ],
+      [
+        {
+          "id": 2,
+          "picture": "/pic2.jpg",
+          "summary": "Another headline from the international scene.",
+          "title": "Second headline for world news"
+        }
+      ],
+      [
+        {
+          "id": 3,
+          "title": "An interesting event happened in a foreign country."
+        },
+        {
+          "id": 4,
+          "title": "A significant development that affects global affairs."
+        }
+      ],
+      [
+        {
+          "id": 1,
+          "picture": "/pic4.jpg",
+          "title": "An international product launch."
+        },
+        {
+          "id": 2,
+          "picture": "/pic5.jpg",
+          "title": "Special coverage of an event abroad."
+        },
+        {
+          "id": 3,
+          "picture": "/pic4.jpg",
+          "title": "Insights into global trends."
+        }
+      ],
+      [
+        {
+          "imgSrc": "/pi1.jpg",
+          "titleText": "One of the top stories from around the globe."
+        },
+        {
+          "imgSrc": "/pic2.jpg",
+          "titleText": "Another important news item from overseas."
+        },
+        {
+          "imgSrc": "/pic3.jpg",
+          "titleText": "Insights into global politics and economics."
+        },
+        {
+          "imgSrc": "/pic4.jpg",
+          "titleText": "Cultural events and happenings worldwide."
+        }
+      ],
+      [
+        {
+          "imgSrc": "/pi1.jpg",
+          "titleText": "Iconic landmarks from various countries."
+        },
+        {
+          "imgSrc": "/pic2.jpg",
+          "titleText": "Famous tourist attractions worldwide."
+        },
+        {
+          "imgSrc": "/pic3.jpg",
+          "titleText": "Traditional customs and rituals from different cultures."
+        },
+        {
+          "imgSrc": "/pic4.jpg",
+          "titleText": "Scenic views and natural wonders from around the world."
+        },
+        {
+          "imgSrc": "/pic3.jpg",
+          "titleText": "Historical sites and monuments from various continents."
+        },
+        {
+          "imgSrc": "/pic4.jpg",
+          "titleText": "Unique experiences and adventures from across the globe."
+        }
+      ],
+      {
+        "content": [
+          {
+            "imgSrc": "/pi1.jpg",
+            "titleText": "One of the world's most famous landmarks."
+          },
+          {
+            "imgSrc": "/pic2.jpg",
+            "titleText": "Iconic structure in a European capital city."
+          },
+          {
+            "imgSrc": "/pic3.jpg",
+            "titleText": "Historical monument from ancient times."
+          },
+          {
+            "imgSrc": "/pic4.jpg",
+            "titleText": "Renowned architectural marvel in a distant land."
+          },
+          {
+            "imgSrc": "/pic3.jpg",
+            "titleText": "Natural wonder from a remote corner of the earth."
+          },
+          {
+            "imgSrc": "/pic4.jpg",
+            "titleText": "Cultural heritage site recognized by UNESCO."
+          }
+        ],
+        "heading": "World"
+      }
+    ]
+  }
+  

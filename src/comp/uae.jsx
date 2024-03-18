@@ -21,8 +21,8 @@ function UAE() {
       // Listen for changes to the 'uae' node in the database
       onValue(databaseRef, (snapshot) => {
         const data = snapshot.val();
-        console.log("Data from Firebase:", data);
-        setBodyData(data || []);
+        console.log("Data from Firebase:", data.uae);
+        setBodyData(data.uae || []);
       });
     };
 
@@ -30,7 +30,7 @@ function UAE() {
     fetchData();
   }, []);
 
-  console.log("Render - Body Data:", bodyData);
+  console.log("Render - Body Data:", bodyData.uae);
 
   return (
     <>

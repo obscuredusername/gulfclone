@@ -1,0 +1,150 @@
+{
+    "uae": [
+      [
+        {
+          "id": 1,
+          "picture": "/pi1.jpg",
+          "summary": "Exciting news in the financial world as Parkin increases its retail IPO shares amidst strong demand.",
+          "title": "Parkin hikes retail IPO shares amid over-subscription"
+        }
+      ],
+      [
+        {
+          "id": 2,
+          "picture": "/pic2.jpg",
+          "summary": "Photos depict the somber end of the fast for Gazans during Ramadan.",
+          "title": "Gazans end fast without joy of Ramadan"
+        }
+      ],
+      [
+        {
+          "id": 3,
+          "title": "Dubai police seize live snake, monkey’s hand, and amulets"
+        },
+        {
+          "id": 4,
+          "title": "Ramadan Time Table: Imsak and Iftar timings across UAE"
+        }
+      ],
+      [
+        {
+          "id": 1,
+          "picture": "/pic4.jpg",
+          "title": "vivo V30 brings studio-like portrait photography to you"
+        },
+        {
+          "id": 2,
+          "picture": "/pic5.jpg",
+          "title": "Episode 2: Gulf News ‘Your Ramadan Table’ food show"
+        },
+        {
+          "id": 3,
+          "picture": "/pic4.jpg",
+          "title": "Tell Me Why Ramadan is the perfect time to donate"
+        }
+      ],
+      [
+        {
+          "imgSrc": "/pi1.jpg",
+          "titleText": "Beat the rush and fines: 8 Dubai Metro rules"
+        },
+        {
+          "imgSrc": "/pic2.jpg",
+          "titleText": "Ramadan in UAE: Give to charities, not street beggars"
+        },
+        {
+          "imgSrc": "/pic3.jpg",
+          "titleText": "How to handle Ramadan challenges on UAE roads"
+        },
+        {
+          "imgSrc": "/pic4.jpg",
+          "titleText": "Fireworks, food and fun during #RamadaninDubai"
+        }
+      ],
+      [
+        {
+          "imgSrc": "/pi1.jpg",
+          "titleText": "Camel Riding in the Desert"
+        },
+        {
+          "imgSrc": "/pic2.jpg",
+          "titleText": "Eiffel Tower, Paris"
+        },
+        {
+          "imgSrc": "/pic3.jpg",
+          "titleText": "Traditional Arabic Coffee and Dates"
+        },
+        {
+          "imgSrc": "/pic4.jpg",
+          "titleText": "Burj Khalifa at Night"
+        },
+        {
+          "imgSrc": "/pic3.jpg",
+          "titleText": "The Dubai Mall Fountain Show"
+        },
+        {
+          "imgSrc": "/pic4.jpg",
+          "titleText": "Great Wall of China"
+        }
+      ],
+      {
+        "content": [
+          {
+            "imgSrc": "/pi1.jpg",
+            "titleText": "View of Dubai Marina"
+          },
+          {
+            "imgSrc": "/pic2.jpg",
+            "titleText": "The Dubai Mall Fountain Show"
+          },
+          {
+            "imgSrc": "/pic3.jpg",
+            "titleText": "Burj Khalifa at Night"
+          },
+          {
+            "imgSrc": "/pic4.jpg",
+            "titleText": "Jumeirah Beach Residence (JBR)"
+          },
+          {
+            "imgSrc": "/pic3.jpg",
+            "titleText": "Traditional Arabic Coffee and Dates"
+          },
+          {
+            "imgSrc": "/pic4.jpg",
+            "titleText": "Camel Riding in the Desert"
+          }
+        ],
+        "heading": "UAE"
+      },
+      {
+        "content": [
+          {
+            "imgSrc": "/pi1.jpg",
+            "titleText": "Statue of Liberty, New York"
+          },
+          {
+            "imgSrc": "/pic2.jpg",
+            "titleText": "Eiffel Tower, Paris"
+          },
+          {
+            "imgSrc": "/pic3.jpg",
+            "titleText": "Great Wall of China"
+          },
+          {
+            "imgSrc": "/pic4.jpg",
+            "titleText": "Sydney Opera House, Australia"
+          },
+          {
+            "imgSrc": "/pic3.jpg",
+            "titleText": "Colosseum, Rome"
+          },
+          {
+            "imgSrc": "/pic4.jpg",
+            "titleText": "Machu Picchu, Peru"
+          }
+        ],
+        "heading": "World"
+      }
+    ]
+  }
+  
