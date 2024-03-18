@@ -1,120 +1,120 @@
 {
-    "uae": [
+    "world": [
       [
         {
           "id": 1,
-          "picture": "/uae-1.jpg",
-          "summary": "Longest-serving Emirati chartered accountant in global professional service shares journey",
-          "title": "Watch: Why this pioneering Emirati counts his blessings"
+          "picture": "/tech-1.jpg",
+          "summary": "From foot rollers to arch tape, fix your inflamed heel with podiatrist-approved items",
+          "title": "7 best products to help with foot pain in UAE, for 2024"
         }
       ],
       [
         {
           "id": 2,
-          "picture": "/uae-2.jpg",
-          "summary": "‘Dubai Iftar’ gathers people of different faiths",
-          "title": "Projects worth Dh3b to improve traffic in Abu Dhabi"
+          "picture": "/tech-2.jpg",
+          "summary": "",
+          "title": "Today’s best Amazon deal: Samsung Galaxy Watch6"
         }
       ],
       [
         {
           "id": 3,
-          "title": "Dubai police seize live snake, monkey’s hand, and amulets"
+          "title": "5 best fitness trackers, in UAE, for 2024"
         },
         {
           "id": 4,
-          "title": "Ramadan Time Table: Imsak and Iftar timings across UAE"
+          "title": "Build a smart home: 5 best smart speakers in UAE, 2024"
         }
       ],
       [
         {
           "id": 1,
-          "picture": "/uae-3.jpg",
-          "title": "Dh400m contribution for new university unveiled"
+          "picture": "/tech-3.jpg",
+          "title": "5 best earbuds and in-ear headphones in UAE, for 2024"
         },
         {
           "id": 2,
-          "picture": "/uae-3.4pg",
-          "title": "Souq Al Freej: Fashion, food, heritage"
+          "picture": "/child.jpg",
+          "title": "Watch: Child tears up during prayer at Grand Mosque"
         },
         {
           "id": 3,
-          "picture": "/pic4.jpg",
-          "title": "Tell Me Why Ramadan is the perfect time to donate"
+          "picture": "/tech-4.jpg",
+          "title": "5 best ultrawide monitors in UAE, for 2024"
         }
       ],
       [
         {
           "imgSrc": "/pi1.jpg",
-          "titleText": "Beat the rush and fines: 8 Dubai Metro rules"
+          "titleText": "One of the top stories from around the globe."
         },
         {
           "imgSrc": "/pic2.jpg",
-          "titleText": "Ramadan in UAE: Give to charities, not street beggars"
+          "titleText": "Another important news item from overseas."
         },
         {
           "imgSrc": "/pic3.jpg",
-          "titleText": "How to handle Ramadan challenges on UAE roads"
+          "titleText": "Insights into global politics and economics."
         },
         {
           "imgSrc": "/pic4.jpg",
-          "titleText": "Fireworks, food and fun during #RamadaninDubai"
+          "titleText": "Cultural events and happenings worldwide."
         }
       ],
       [
         {
           "imgSrc": "/pi1.jpg",
-          "titleText": "Camel Riding in the Desert"
+          "titleText": "Iconic landmarks from various countries."
         },
         {
           "imgSrc": "/pic2.jpg",
-          "titleText": "Eiffel Tower, Paris"
+          "titleText": "Famous tourist attractions worldwide."
         },
         {
           "imgSrc": "/pic3.jpg",
-          "titleText": "Traditional Arabic Coffee and Dates"
+          "titleText": "Traditional customs and rituals from different cultures."
         },
         {
           "imgSrc": "/pic4.jpg",
-          "titleText": "Burj Khalifa at Night"
+          "titleText": "Scenic views and natural wonders from around the world."
         },
         {
           "imgSrc": "/pic3.jpg",
-          "titleText": "The Dubai Mall Fountain Show"
+          "titleText": "Historical sites and monuments from various continents."
         },
         {
           "imgSrc": "/pic4.jpg",
-          "titleText": "Great Wall of China"
+          "titleText": "Unique experiences and adventures from across the globe."
         }
       ],
       {
         "content": [
           {
             "imgSrc": "/pi1.jpg",
-            "titleText": "View of Dubai Marina"
+            "titleText": "One of the world's most famous landmarks."
           },
           {
             "imgSrc": "/pic2.jpg",
-            "titleText": "The Dubai Mall Fountain Show"
+            "titleText": "Iconic structure in a European capital city."
           },
           {
             "imgSrc": "/pic3.jpg",
-            "titleText": "Burj Khalifa at Night"
+            "titleText": "Historical monument from ancient times."
           },
           {
             "imgSrc": "/pic4.jpg",
-            "titleText": "Jumeirah Beach Residence (JBR)"
+            "titleText": "Renowned architectural marvel in a distant land."
           },
           {
             "imgSrc": "/pic3.jpg",
-            "titleText": "Traditional Arabic Coffee and Dates"
+            "titleText": "Natural wonder from a remote corner of the earth."
           },
           {
             "imgSrc": "/pic4.jpg",
-            "titleText": "Camel Riding in the Desert"
+            "titleText": "Cultural heritage site recognized by UNESCO."
           }
         ],
-        "heading": "UAE"
+        "heading": "World"
       },
       {
         "content": [
