@@ -8,8 +8,6 @@ import Subsection from './subsection';
 
 function Bodycont({ body }) {
 
-
-  console.log("malikkkkkkkkkkkkkk")
   console.log(body)
   return (
     <div className='container mt-5' style={{ maxWidth: '75%' }}>
@@ -44,7 +42,7 @@ function Bodycont({ body }) {
       <Postlist className={'col-md-2'} body={body[5]} />
 
       <Subsection body={body[6]} />
-      <Subsection body={body[7]} />
+      <Subsection  body={body[7]} />
     </div>
   );
 }
