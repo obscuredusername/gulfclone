@@ -22,7 +22,7 @@ function Header({title}) {
   const formattedDate = currentDate.toLocaleDateString('en-US', options);
 
   return (
-    <div style={{ textAlign: 'center' }}>
+    <div style={{ textAlign: 'center', marginTop:'50px'}}>
       <h1>{title}</h1>
       <p>{formattedDate}</p>
     </div>

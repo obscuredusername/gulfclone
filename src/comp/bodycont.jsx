@@ -6,6 +6,8 @@ import Postlist from './postlist';
 import Subsection from './subsection';
 
 function Bodycont({ body }) {
+
+
   console.log("malikkkkkkkkkkkkkk")
   console.log(body)
 
@@ -37,11 +39,12 @@ function Bodycont({ body }) {
         </div>
         <div className='col-md-3'></div>
       </div>
-      <Body2 body={body && body[3]} />
-      <Postlist className={'col-md-3'} body={body && body[4]} />
-      <Postlist className={'col-md-2'} body={body && body[5]} />
-      <Subsection body={body && body[6]} />
-      <Subsection body={body && body[7]} />
+      <Body2 body={body[3]} />
+      <Postlist className={'col-md-3'} body={body[4]} />
+      <Postlist className={'col-md-2'} body={body[5]} />
+
+      <Subsection body={body[6]} />
+      <Subsection body={body[7]} />
     </div>
   );
 }
