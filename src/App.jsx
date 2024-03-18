@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
 
 import Main from './comp/main';
-import Uae from './comp/Uae';
+import Uae from '../src/comp/Uae';
 import World from './comp/world';
 import Sports from './comp/Sports';
 import Ujobs from './comp/ujob';
