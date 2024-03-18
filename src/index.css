@@ -1,43 +1,52 @@
+
 .nbr {
-  background: #001627;
-  height: 45px;
-  font-family: Montserrat, Arial, sans-serif;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
+    position: fixed;
+  
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 45px;
+    font-family: Montserrat, Arial, sans-serif;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    background: #001627;
+    z-index: 999; /* Ensure it's above other content */
+  }
+  .nvr
+  {
+    margin-bottom: 100px;
+  }
+  
+  .nbr-coupon {
+    color: #fff;
+    font-size: 0.8rem;
+    margin-top: 20px;
+    margin-left: 176px;
+  }
+  
+  .nbr-bn {
+    display: flex;
+    color: #fff;
+    margin-top: 5px;
+    font-size: 0.8rem;
+  }
+  
+  .nav-link {
+    color: #fff;
+    font-size: 0.8rem;
+    text-decoration: none;
+    margin-left: 20px;
+  }
+  
+  /* Styles for scrolled state */
+  .nbr.scrolled {
+    background-color:  #083c6c; /* Change background color when scrolled */
+  }
+  
 
-  padding: 0 1rem;
-  margin-top: -8px;
-  margin-left: -8px;
-}
-
-.nbr-coupon {
-  color: #fff;
-  font-size: 0.8rem;
-  margin-top: 20px;
-  margin-left: 176px;
-}
-
-.nbr-bn {
-  display: flex;
-  color: #fff;
-  margin-top: 5px;
-  font-size: 0.8rem;
-}
-
-.nav-link {
-  color: #fff;
-  font-size: 0.8rem;
-  text-decoration: none;
-  margin-left: 20px;
-}
-
-.nav-link:hover {
-  text-decoration: none;
-}
-/* Navbar2.css (or add to your existing CSS file) */
-
-/* ... (existing styles) */
+  
 
 .nbr2 {
   border-top: 3px solid #000;
