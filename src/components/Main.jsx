@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from './navbar';
 import Header from './header';
 import Navbar2 from './navbar2';
@@ -6,8 +6,34 @@ import Navbar3 from './navbar3';
 import Bodycont from './bodycont';
 import { navItems,navItem2,navItem3,body } from './data'; // Importing navItems from data file
 import Footer from './footer';
+import { getDatabase, ref, onValue } from "firebase/database";
+import { app } from '../firebase/Firebase'; // Adjust the path to Firebase.js if needed
 
 function Main() {
+
+  const [bodyData, setBodyData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const db = getDatabase(app);
+      const databaseRef = ref(db);
+
+      console.log("Fetching data...");
+
+      // Listen for changes to the 'uae' node in the database
+      onValue(databaseRef, (snapshot) => {
+        const data = snapshot.val();
+        console.log("Data from Firebase:", data.news.uae.uae);
+        setBodyData(data.news.uae.uae || []);
+      });
+    };
+
+    // Call the fetchData function
+    fetchData();
+  }, []);
+
+  console.log("Render - Body Data:", bodyData);
+
   return (
     <>
       <Navbar  navItems={navItems} />
