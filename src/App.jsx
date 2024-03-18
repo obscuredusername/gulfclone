@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
 
 import Main from './comp/main';
-import UAE from './comp/uae';
+import UAE from './comp/Uae';
 import World from './comp/world';
 import Sports from './comp/Sports';
 import Ujobs from './comp/ujob';
@@ -16,7 +16,7 @@ function App() {
   return (
     <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Main/>} />
+         <Route path="/" element={<Main/>} />
          <Route path="/uae" element={<UAE />} />
          <Route path="/world" element={<World />} />
          <Route path="/Sports" element={<Sports/>} />
