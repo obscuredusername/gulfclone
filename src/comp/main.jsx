@@ -9,8 +9,8 @@ import { navItems,navItem2,navItem3,body } from './data'; // Importing navItems 
 function Main() {
   return (
     <>
-      <Navbar className="nvr" navItems={navItems} />
-      <Header  title={'SHARJA'}/>
+      <Navbar  navItems={navItems} />
+      <Header className="nvr" title={'SHARJA'}/>
       <Navbar2 navItem2={navItem2}/>
       <Navbar3 navItem3={navItem3} />
       <Bodycont body={body}/>
