@@ -9,7 +9,7 @@ import { navItems,navItem2,navItem3,body } from './data'; // Importing navItems 
 function Main() {
   return (
     <>
-      <Navbar navItems={navItems} /> {/* Passing navItems as a prop */}
+      <Navbar className="nvr" navItems={navItems} />
       <Header  title={'SHARJA'}/>
       <Navbar2 navItem2={navItem2}/>
       <Navbar3 navItem3={navItem3} />
