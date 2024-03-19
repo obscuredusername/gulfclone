@@ -39,7 +39,10 @@ function Navbar({ navItems }) {
 
   return (
     <div className={scrolled ? 'nbr scrolled' : 'nbr'}>
-    {!isMobileView && navItems.map((item, index) => (<p className={scrolled ? 'nbr-coupon scrolled' : 'nbr-coupon'}>Coupons</p>))}
+ {!isMobileView && (
+  <p className={scrolled ? 'nbr-coupon scrolled' : 'nbr-coupon'}>Coupons</p>
+)}
+
       
       {!isMobileView && navItems.map((item, index) => (
         <a key={index} href={item.link} className={scrolled ? 'nav-link scrolled' : 'nav-link'} style={{ color: "white" }}>
