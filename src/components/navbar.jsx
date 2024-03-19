@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import '../index.css';
+import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
+import { Navbar as BootstrapNavbar, Nav } from 'react-bootstrap'; // Import Bootstrap Navbar components
 
 function Navbar({ navItems }) {
   const [scrolled, setScrolled] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   useEffect(() => {
@@ -15,11 +18,16 @@ function Navbar({ navItems }) {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768); // Adjust breakpoint as per your design
+    };
 
-    // Clean up the event listener
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('resize', checkMobile);
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', checkMobile);
     };
   }, []);
 
@@ -29,50 +37,45 @@ function Navbar({ navItems }) {
 
   const renderNavItems = () => {
     return navItems.map((item, index) => (
-      <a key={index} href={item.link} className={scrolled ? 'nav-link scrolled' : 'nav-link'}>
+      <Nav.Link key={index} href={item.link} className={scrolled ? 'nav-link scrolled' : 'nav-link'} style={{ color: 'white' }} >
         {item.text}
-      </a>
+      </Nav.Link>
     ));
   };
 
   return (
-    <div className={`nbr ${scrolled ? 'scrolled' : ''}`}>
-      <p className={`nbr-coupon ${scrolled ? 'scrolled' : ''}`}>Coupons</p>
-      <div className={`nbr-bn ${scrolled ? 'scrolled' : ''}`}>
-        {renderNavItems()}
-      </div>
-      <div className="d-md-none"> {/* Display only on mobile devices */}
-        <button className="btn-custom" onClick={toggleSidebar}>
-          <span className="material-symbols-outlined">menu</span>
-        </button>
-      </div>
-      {sidebarOpen && (
-        <div className="sidebar d-md-none"> {/* Display only on mobile devices */}
-          {/* Sidebar content */}
-          <ul>
-            <li>Link 1</li>
-            <li>Link 2</li>
-            <li>Link 3</li>
-          </ul>
+    <>
+      <BootstrapNavbar expand="lg" className={`nbr${scrolled ? ' scrolled' : ''} ${isMobile ? 'nbr-mobile' : ''}`} >
+        {isMobile && (
+          <button className="menu-btn" onClick={toggleSidebar}>
+            <span className="material-symbols-outlined">menu</span>
+          </button>
+        )}
+        <BootstrapNavbar.Brand className={`nbr-coupon${scrolled ? ' scrolled' : ''}`} href="#" style={{ color: 'white' }}>Coupons</BootstrapNavbar.Brand>
+        {!isMobile && (
+          <BootstrapNavbar.Toggle aria-controls="basic-navbar-nav" />
+        )}
+        <BootstrapNavbar.Collapse id="basic-navbar-nav">
+          <Nav className={`mr-auto ${isMobile ? 'flex-column' : 'mr-auto'}`}>
+            {renderNavItems()}
+            {!isMobile && (
+              <Nav.Link href="#" className={`nav-link${scrolled ? ' scrolled' : ''}`} style={{ color: 'white' }}>Link</Nav.Link>
+            )}
+          </Nav>
+        </BootstrapNavbar.Collapse>
+      </BootstrapNavbar>
+      {isMobile && (
+        <div className={`sidebar${sidebarOpen ? ' open' : ''}`}  style={{ backgroundColor: 'black '}}> {/* Applied inline style for background color */}
+          <button className="close-sidebar" onClick={toggleSidebar}>
+            <span className="material-symbols-outlined">close</span>
+          </button>
+          <Nav className="flex-column">
+            {renderNavItems()}
+            {/* Add more Nav.Link components for the sidebar if needed */}
+          </Nav>
         </div>
       )}
-      <div className="sidebtn">
-        <div className="pr-subs">
-          <button className="bn-subs">Subscribe</button>
-        </div>
-        <div className="d-none d-md-flex"> {/* Display only on non-mobile devices */}
-          <button className="btn-custom">
-            <span className="material-symbols-outlined">person</span>
-          </button>
-          <button className="btn-custom">
-            <span className="material-symbols-outlined">notifications</span>
-          </button>
-          <button className="btn-custom">
-            <span className="material-symbols-outlined">search</span>
-          </button>
-        </div>
-      </div>
-    </div>
+    </>
   );
 }
 

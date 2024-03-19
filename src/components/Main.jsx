@@ -4,14 +4,14 @@ import Header from './header';
 import Navbar2 from './navbar2';
 import Navbar3 from './navbar3';
 import Bodycont from './bodycont';
-import { navItems,navItem2,navItem3,body } from './data'; // Importing navItems from data file
+import { navItems, navItem2, navItem3, body } from './data'; // Importing navItems from data file
 import Footer from './footer';
 import { getDatabase, ref, onValue } from "firebase/database";
 import { app } from '../firebase/Firebase'; // Adjust the path to Firebase.js if needed
 
 function Main() {
-
   const [bodyData, setBodyData] = useState([]);
+  const [isMobile, setIsMobile] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -30,19 +30,33 @@ function Main() {
 
     // Call the fetchData function
     fetchData();
+
+    // Check if viewport is mobile on initial render
+    setIsMobile(window.innerWidth <= 768);
+
+    // Event listener to check if viewport changes to mobile
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    // Clean up event listener
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   console.log("Render - Body Data:", bodyData);
 
   return (
     <>
-      <Navbar  navItems={navItems} />
-      <Header  title={'SHARJA'}/>
-      <Navbar2 navItem2={navItem2}/>
+      <Navbar navItems={navItems} />
+      <Header title={'SHARJA'} />
+      {isMobile ? null : <Navbar2 navItem2={navItem2} />}
       <Navbar3 navItem3={navItem3} />
-      <Bodycont className="end" body={body}/>
-      <Footer/>
-    
+      <Bodycont className="end" body={body} />
+      <Footer />
     </>
   );
 }
