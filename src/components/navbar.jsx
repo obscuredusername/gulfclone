@@ -1,12 +1,13 @@
+// Navbar.js
 import React, { useState, useEffect } from 'react';
 import '../index.css';
-import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
-import { Navbar as BootstrapNavbar, Nav } from 'react-bootstrap'; // Import Bootstrap Navbar components
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,700,0,200" />
 
 function Navbar({ navItems }) {
   const [scrolled, setScrolled] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobileView, setIsMobileView] = useState(window.innerWidth <= 768); // Adjust the breakpoint as needed
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,64 +19,64 @@ function Navbar({ navItems }) {
       }
     };
 
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 768); // Adjust breakpoint as per your design
+    const handleResize = () => {
+      setIsMobileView(window.innerWidth <= 768); // Adjust the breakpoint as needed
     };
 
     window.addEventListener('scroll', handleScroll);
-    window.addEventListener('resize', checkMobile);
+    window.addEventListener('resize', handleResize);
 
+    // Clean up the event listeners
     return () => {
       window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('resize', checkMobile);
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
-  const toggleSidebar = () => {
-    setSidebarOpen(!sidebarOpen);
-  };
-
-  const renderNavItems = () => {
-    return navItems.map((item, index) => (
-      <Nav.Link key={index} href={item.link} className={scrolled ? 'nav-link scrolled' : 'nav-link'} style={{ color: 'white' }} >
-        {item.text}
-      </Nav.Link>
-    ));
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
   return (
-    <>
-      <BootstrapNavbar expand="lg" className={`nbr${scrolled ? ' scrolled' : ''} ${isMobile ? 'nbr-mobile' : ''}`} >
-        {isMobile && (
-          <button className="menu-btn" onClick={toggleSidebar}>
-            <span className="material-symbols-outlined">menu</span>
-          </button>
-        )}
-        <BootstrapNavbar.Brand className={`nbr-coupon${scrolled ? ' scrolled' : ''}`} href="#" style={{ color: 'white' }}>Coupons</BootstrapNavbar.Brand>
-        {!isMobile && (
-          <BootstrapNavbar.Toggle aria-controls="basic-navbar-nav" />
-        )}
-        <BootstrapNavbar.Collapse id="basic-navbar-nav">
-          <Nav className={`mr-auto ${isMobile ? 'flex-column' : 'mr-auto'}`}>
-            {renderNavItems()}
-            {!isMobile && (
-              <Nav.Link href="#" className={`nav-link${scrolled ? ' scrolled' : ''}`} style={{ color: 'white' }}>Link</Nav.Link>
-            )}
-          </Nav>
-        </BootstrapNavbar.Collapse>
-      </BootstrapNavbar>
-      {isMobile && (
-        <div className={`sidebar${sidebarOpen ? ' open' : ''}`}  style={{ backgroundColor: 'black '}}> {/* Applied inline style for background color */}
-          <button className="close-sidebar" onClick={toggleSidebar}>
-            <span className="material-symbols-outlined">close</span>
-          </button>
-          <Nav className="flex-column">
-            {renderNavItems()}
-            {/* Add more Nav.Link components for the sidebar if needed */}
-          </Nav>
+    <div className={scrolled ? 'nbr scrolled' : 'nbr'}>
+    {!isMobileView && navItems.map((item, index) => (<p className={scrolled ? 'nbr-coupon scrolled' : 'nbr-coupon'}>Coupons</p>))}
+      
+      {!isMobileView && navItems.map((item, index) => (
+        <a key={index} href={item.link} className={scrolled ? 'nav-link scrolled' : 'nav-link'} style={{ color: "white" }}>
+          {item.text}
+        </a>
+      ))}
+      {isMobileView && (
+        <button className="btn-custom" onClick={toggleMobileMenu}>
+          <span className="material-symbols-outlined">menu</span>
+        </button>
+      )}
+
+      {isMobileMenuOpen && (
+        <div className="dropdown-menu">
+          {navItems.map((item, index) => (
+            <a key={index} href={item.link} className="dropdown-item">
+              {item.text}
+            </a>
+          ))}
         </div>
       )}
-    </>
+
+      <div className='sidebtn'>
+        <div className='pr-subs'>
+          <button className="bn-subs">Subscribe</button>
+        </div>
+        <button className="btn-custom">
+          <span className="material-symbols-outlined">person</span>
+        </button>
+        <button className="btn-custom">
+          <span className="material-symbols-outlined">notifications</span>
+        </button>
+        <button className="btn-custom">
+          <span className="material-symbols-outlined">search</span>
+        </button>
+      </div>
+    </div>
   );
 }
 

@@ -18,7 +18,20 @@
   {
     margin-top: 100px;
   }
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #000; /* Black background */
+    color: #fff; /* White text color */
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
   
+  .dropdown-menu.show {
+    display: block;
+  }
   .nbr-coupon {
     color: #fff;
     font-size: 0.8rem;
