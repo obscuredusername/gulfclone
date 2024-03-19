@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import '../index.css';
 
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,700,0,200" />
 function Navbar({ navItems }) {
   const [scrolled, setScrolled] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,6 +23,10 @@ function Navbar({ navItems }) {
     };
   }, []);
 
+  const toggleSidebar = () => {
+    setSidebarOpen(!sidebarOpen);
+  };
+
   const renderNavItems = () => {
     return navItems.map((item, index) => (
       <a key={index} href={item.link} className={scrolled ? 'nav-link scrolled' : 'nav-link'}>
@@ -32,25 +36,41 @@ function Navbar({ navItems }) {
   };
 
   return (
-    <div className={scrolled ? 'nbr scrolled' : 'nbr'}>
-      <p className={scrolled ? 'nbr-coupon scrolled' : 'nbr-coupon'}>Coupons</p>
-      <div className={scrolled ? 'nbr-bn scrolled' : 'nbr-bn'}>
+    <div className={`nbr ${scrolled ? 'scrolled' : ''}`}>
+      <p className={`nbr-coupon ${scrolled ? 'scrolled' : ''}`}>Coupons</p>
+      <div className={`nbr-bn ${scrolled ? 'scrolled' : ''}`}>
         {renderNavItems()}
       </div>
-        <div className='sidebtn'>
-        <div className='pr-subs'>
+      <div className="d-md-none"> {/* Display only on mobile devices */}
+        <button className="btn-custom" onClick={toggleSidebar}>
+          <span className="material-symbols-outlined">menu</span>
+        </button>
+      </div>
+      {sidebarOpen && (
+        <div className="sidebar d-md-none"> {/* Display only on mobile devices */}
+          {/* Sidebar content */}
+          <ul>
+            <li>Link 1</li>
+            <li>Link 2</li>
+            <li>Link 3</li>
+          </ul>
+        </div>
+      )}
+      <div className="sidebtn">
+        <div className="pr-subs">
           <button className="bn-subs">Subscribe</button>
         </div>
+        <div className="d-none d-md-flex"> {/* Display only on non-mobile devices */}
           <button className="btn-custom">
-            <span class="material-symbols-outlined">person</span>
+            <span className="material-symbols-outlined">person</span>
           </button>
           <button className="btn-custom">
-            <span class="material-symbols-outlined">notifications</span>
+            <span className="material-symbols-outlined">notifications</span>
           </button>
           <button className="btn-custom">
-            <span class="material-symbols-outlined">search</span>
+            <span className="material-symbols-outlined">search</span>
           </button>
-        
+        </div>
       </div>
     </div>
   );
