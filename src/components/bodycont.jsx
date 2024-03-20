@@ -39,7 +39,7 @@ function Bodycont({ body }) {
         </div>
         <div className='col-md-3'></div>
       </div>
-      {/* <Body2 body={body[3]} /> */}
+      <Body2 body={body[3]} /> 
       <Postlist className={'col-md-3'} body={body[4]} />
       <Postlist className={'col-md-2'} body={body[5]} />
 

@@ -19,11 +19,7 @@ export const navItem2 = [
     { text: 'Home', link: '/' },
     { text: 'About', link: '/about' },
     { text: 'Contact', link: '/contact' },
-    { text: 'Home', link: '/' },
-    { text: 'About', link: '/about' },
-    { text: 'Contact', link: '/contact' },
-    { text: 'Home', link: '/' },
-    { text: 'About', link: '/about' },
+   
     
     // Add more items as needed
   ];

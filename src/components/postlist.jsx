@@ -7,10 +7,10 @@ const Postlist = ({ className, body }) => { // Combine props into a single objec
     <div className="container">
       <div className="row bodymain">
         {body.map((postcard, index) => (
-          <div key={index} className={className}> {/* Use className from props */}
+          <div key={index} className={className}> 
             <Postcard
               imgSrc={postcard.imgSrc}
-              titleText={postcard.titleText}
+              titleText={postcard.titleText} 
             />
           </div>
         ))}

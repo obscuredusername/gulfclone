@@ -8,6 +8,7 @@ import { navItems, navItem2, navItem3, body } from './data'; // Importing navIte
 import Footer from './footer';
 import { getDatabase, ref, onValue } from "firebase/database";
 import { app } from '../firebase/Firebase'; // Adjust the path to Firebase.js if needed
+import CreatePost from './createpost';
 
 function Main() {
   const [bodyData, setBodyData] = useState([]);
@@ -57,6 +58,7 @@ function Main() {
       <Navbar3 navItem3={navItem3} />
       <Bodycont className="end" body={body} />
       <Footer />
+      
     </>
   );
 }

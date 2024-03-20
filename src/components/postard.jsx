@@ -5,7 +5,7 @@ const Postcard = ({  imgSrc, titleText }) => {
 
   return (
     <div
-      style={{marginTop: '10px', borderRight:'1px solid #ccc ' }}
+      style={{marginTop: '20px', borderRight:'1px solid #ccc ' }}
       className='post'
     >
       <img
@@ -13,7 +13,7 @@ const Postcard = ({  imgSrc, titleText }) => {
         alt="Resizable Image"
         style={{ width: '90%',paddingLeft:'0px' ,height: 'auto',borderTop:'3px solid #e56501' }}
       />
-      <h4 style={{ textAlign: 'center', margin: '10px ' }}>{titleText}</h4>
+      <h4 className='pcard'>{titleText}</h4>
     </div>
   );
 };

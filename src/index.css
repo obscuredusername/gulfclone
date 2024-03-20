@@ -28,10 +28,51 @@
     border: 1px solid #ccc;
     padding: 10px;
   }
-  
-  .dropdown-menu.show {
-    display: block;
+  .dropbtn {
+    background-color: transparent; /* Changed background color to black */
+    color: white; /* Changed text color to white */
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
   }
+  
+  .dropdown {
+    background-color: #001627;
+    top: 150px; 
+    left: 0;
+    padding: 100px; /* Removed padding */
+    width: 100%; /* Set width to 100% */
+}
+.dropdown > .nav-link
+{
+  padding: 10px;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    padding: 60px;
+    background-color: #001627;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a:hover {
+    background-color: #333; 
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #333; /* Darkened hover background color */
+}
+
+.dropdown-menu.show {
+    display: block;
+}
+
   .nbr-coupon {
     color: #fff;
     font-size: 0.8rem;
@@ -116,7 +157,7 @@ display: flex
   list-style: none;
   display: flex;
   margin: 0;
-  padding: 0;
+  padding-right: 10px;
 }
 
 .nbr2-item {
@@ -236,7 +277,10 @@ display: flex
 {
   font-size: 1.45rem !important;
   margin-right: 20px;
+  font-weight: 600;
+  font-family: "Times New Roman", Times, serif;
 
+  
 }
 .p2ig{
   width: 146px;
@@ -253,10 +297,24 @@ display: flex
 {
   font-weight: 500;
   font-size: 27px;
+  font-family: sans-serif !important;
   margin-top: 10px !important;
   padding-bottom: 10px !important;
   border-bottom: 1px solid #ccc !important;
 }
+.pcard
+{
+  text-align: 'center';
+   margin: '10px ';
+   font-size: 20px;
+   font-weight: 600;
+  font-family: "Times New Roman", Times, serif;
+  margin-bottom: 30px;
+  
+  
+  
+}
+
 .footer {
   background-color: black;
   color: white;
@@ -316,7 +374,10 @@ display: flex
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
-
+.post
+{
+ margin-top: 100px;
+}
 .footer__scroll-top:hover {
   background-color: #333;
 }

@@ -34,7 +34,8 @@ function Navbar({ navItems }) {
   }, []);
 
   const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
+    setIsMobileMenuOpen(prevState => !prevState);
+    console.log('Mobile menu toggled:', isMobileMenuOpen);
   };
 
   return (
@@ -45,25 +46,26 @@ function Navbar({ navItems }) {
 
       
       {!isMobileView && navItems.map((item, index) => (
-        <a key={index} href={item.link} className={scrolled ? 'nav-link scrolled' : 'nav-link'} style={{ color: "white" }}>
+        <a key={index} href={item.link} className={scrolled ? 'nav-link scrolled' : 'nav-link'} style={{ color: "white",zIndex:"999" }}>
           {item.text}
         </a>
       ))}
       {isMobileView && (
-        <button className="btn-custom" onClick={toggleMobileMenu}>
-          <span className="material-symbols-outlined">menu</span>
-        </button>
+        <div  onClick={toggleMobileMenu}>
+        <button class="dropbtn"><span className="material-symbols-outlined">menu</span></button>
+        </div>
       )}
 
       {isMobileMenuOpen && (
-        <div className="dropdown-menu">
-          {navItems.map((item, index) => (
-            <a key={index} href={item.link} className="dropdown-item">
-              {item.text}
-            </a>
-          ))}
-        </div>
-      )}
+        <div class="dropdown" onClick={toggleMobileMenu}>
+        {navItems.map((item, index) => (
+        <a key={index} href={item.link} className={scrolled ? 'nav-link scrolled' : 'nav-link'} style={{ color: "white",zIndex:"999" }}>
+          {item.text}
+        </a>
+    ))}
+  </div>
+)}
+
 
       <div className='sidebtn'>
         <div className='pr-subs'>

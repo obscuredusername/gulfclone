@@ -7,6 +7,7 @@ import World from "./components/world"
 import Ujobs from "./components/ujob"
 import Tech from "./components/tech"
 import Sports from "./components/Sports"
+import CreatePost from "./components/createpost";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/Sports" element={<Sports />} />
         <Route path="/Ujobs" element={<Ujobs />} />
         <Route path="/tech" element={<Tech />} />
+        <Route path="/admin" element={<CreatePost/>} />
       </Routes>
     </BrowserRouter>
   );

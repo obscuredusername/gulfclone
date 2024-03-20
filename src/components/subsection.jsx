@@ -6,7 +6,7 @@ const Subsection = ({ body }) => { // Destructure the body prop
 
   return (
     <div className='container mt-5 sbsect'>
-      <div className='row'>
+      <div className='row post'>
         <p className='sb-title'>{heading}</p> {/* Access the heading */}
         <Postlist className={'col-md-2'} body={content} /> {/* Pass content as body to Postlist */}
       </div>
