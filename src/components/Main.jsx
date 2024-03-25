@@ -75,7 +75,7 @@ function Main() {
       <Navbar navItems={navItems} />
       <Header title={'Sharjha'} />
       <Navbar2 navItem2={navItem2} />
-      {/* <Navbar3 navItem3={navItem3} /> */}
+       <Navbar3 navItem3={navItem3} /> 
       {/* Render Bodycont only if posts have been fetched */}
       {loading ? <p>Loading...</p> : <Bodycont headings={headings} subHeadingPosts={subHeadingPosts} simplePosts={simplePosts} />}
     </>

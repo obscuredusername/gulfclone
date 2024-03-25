@@ -58,6 +58,10 @@
 .dropdown > .nav-link
 {
   padding: 10px;
+  color: #fff;
+  font-size: 0.8rem !important;
+  margin-top: 20px;
+  margin-left: 176px;
 }
 .dropdown-content {
     display: none;
@@ -99,7 +103,7 @@
     font-size: 0.8rem;
   }
   
-  .nav-link {
+  a.nav-link {
     color: #fff;
     font-size: 0.8rem;
     text-decoration: none;
@@ -120,7 +124,6 @@ display: flex
   background-color: transparent !important;
   color: white;
   border: none;
- 
   border-right: 1px solid white; /* Add a right border */
   padding: 5px 10px;
 
@@ -239,52 +242,52 @@ display: flex
   height: 38px;
 }
 
-
-
-.Bodycont {
-  width: 1130px;
-  margin: 0 auto;
-  border: 1px solid #ccc;
-  padding: 20px;
-  box-sizing: border-box;
-  margin-top: 25px;
-}
 .bodymain
 {
   border-bottom: 1px solid #ccc !important;
- 
+  
 }
 
 .p1 {
 
-  padding: 0 !important;
+  margin-bottom: 30px;
   border-right: 1px solid #ccc !important;
 
 }
 
 .p1Heading {
   font-size: 2.25rem;
+  text-decoration: none;
+  color: black;
+  font-family: "Times New Roman", Times, serif;
 }
+.fntfam
+{
+  font-family: "Times New Roman", Times, serif;
+}
+
 .pimg
 {
   border-top: 3px solid #e56501;
   margin-top: 20px;
 }
+
 .p1Sum {
   font-size: 1rem;
   color: #333;
 }
+
 .p2{
   border-bottom: 1px solid #ccc !important;
   margin-right: 10px;
 }
+
 .p2headin
 {
   border-bottom: 1px solid #ccc !important;
   margin-right: 20px;
-  
-
 }
+
 .p2heading
 {
   font-size: 1.45rem !important;
@@ -320,11 +323,8 @@ display: flex
    margin: '10px ';
    font-size: 20px;
    font-weight: 600;
-  font-family: "Times New Roman", Times, serif;
-  margin-bottom: 30px;
-  
-  
-  
+   font-family: "Times New Roman", Times, serif;
+   margin-bottom: 30px;
 }
 
 .footer {
@@ -386,9 +386,22 @@ display: flex
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
+.posts
+{
+ margin-top: 20px;
+ margin-bottom: 20px;
+}
 .post
 {
  margin-top: 100px;
+ margin-bottom: 10px;
+}
+.post-link
+{
+  text-decoration: none;
+  color: black;
+ 
+  
 }
 .footer__scroll-top:hover {
   background-color: #333;
@@ -420,7 +433,7 @@ display: flex
 }
 
 .footer {
-  /* Your existing footer styles */
+ 
 }
 
 .end
