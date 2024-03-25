@@ -1,0 +1,17 @@
+/* CustomNavbar.css */
+.custom-toggler {
+    border-color: white;
+  }
+  
+  .custom-toggler .navbar-toggler-icon {
+    border-color: white;
+  }
+  
+  .custom-navbar {
+    background-color: #111142;
+  }
+  
+  .custom-navbar-scrolled {
+    background-color: #3156b8;
+  }
+  

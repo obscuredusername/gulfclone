@@ -1,0 +1,110 @@
+import React from 'react';
+import { getDatabase, ref, push } from "firebase/database";
+import { app } from '../firebase/Firebase'; // Adjust the path to Firebase.js if needed
+
+function UAE() {
+  const uaeData = {
+    heading: "UAE",
+    content: [
+      {
+        imgSrc: "/pi1.jpg",
+        titleText: "View of Dubai Marina"
+      },
+      {
+        imgSrc: "/pic2.jpg",
+        titleText: "The Dubai Mall Fountain Show"
+      },
+      {
+        imgSrc: "/pic3.jpg",
+        titleText: "Burj Khalifa at Night"
+      },
+      {
+        imgSrc: "/pic4.jpg",
+        titleText: "Jumeirah Beach Residence (JBR)"
+      },
+      {
+        imgSrc: "/pic3.jpg",
+        titleText: "Traditional Arabic Coffee and Dates"
+      },
+      {
+        imgSrc: "/pic4.jpg",
+        titleText: "Camel Riding in the Desert"
+      }
+    ]
+  };
+
+  // Function to handle the button click and store UAE data in Firebase
+  const handleStoreData = () => {
+    const db = getDatabase(app);
+    const databaseRef = ref(db, 'uae');
+    push(databaseRef, uaeData);
+  };
+
+  return (
+    <div>
+      <button onClick={handleStoreData}>Store UAE Data in Firebase</button>
+    </div>
+  );
+}
+
+export default UAE;
+
+
+
+
+
+
+
+
+
+import React, { useState, useEffect } from 'react';
+import { getDatabase, ref, onValue } from "firebase/database";
+import { app } from '../firebase/Firebase'; // Adjust the path to Firebase.js if needed
+
+function UAE() {
+  const [uaeData, setUaeData] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const db = getDatabase(app);
+      const databaseRef = ref(db, 'uae');
+
+      // Listen for changes to the 'uae' node in the database
+      onValue(databaseRef, (snapshot) => {
+        const data = snapshot.val();
+
+        // Extracting the data object from the snapshot
+        const dataKey = Object.keys(data)[0];
+        const uaeData = data[dataKey];
+
+        setUaeData(uaeData);
+      });
+    };
+
+    fetchData();
+  }, []);
+
+  return (
+    <div>
+      <h2>UAE Data from Firebase</h2>
+      {uaeData ? (
+        <div>
+          <h3>{uaeData.heading}</h3>
+          <ul>
+            {uaeData.content.map((item, index) => (
+              <li key={index}>
+                <img src={item.imgSrc} alt={item.titleText} />
+                <p>{item.titleText}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ) : (
+        <p>Loading...</p>
+      )}
+    </div>
+  );
+}
+
+export default UAE;
+

@@ -11,54 +11,73 @@ import { app } from '../firebase/Firebase'; // Adjust the path to Firebase.js if
 import CreatePost from './createpost';
 
 function Main() {
-  const [bodyData, setBodyData] = useState([]);
-  const [isMobile, setIsMobile] = useState(true);
+ 
+  const [headings, setHeadings] = useState([]);
+  const [subHeadingPosts, setSubHeadingPosts] = useState([]);
+  const [simplePosts, setSimplePosts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
-      const db = getDatabase(app);
-      const databaseRef = ref(db);
+      try {
+        const db = getDatabase(app);
+        const uaePostsRef = ref(db, 'posts/UAE');
 
-      console.log("Fetching data...");
+        console.log("Fetching UAE posts...");
 
-      // Listen for changes to the 'uae' node in the database
-      onValue(databaseRef, (snapshot) => {
-        const data = snapshot.val();
-        console.log("Data from Firebase:", data.news.uae.uae);
-        setBodyData(data.news.uae.uae || []);
-      });
+        onValue(uaePostsRef, (snapshot) => {
+          const data = snapshot.val();
+          if (data) {
+            // Organize posts into separate arrays based on tags
+            const headingsArray = [];
+            const subHeadingPostsArray = [];
+            const simplePostsArray = [];
+
+            Object.keys(data).forEach(key => {
+              const post = {
+                id: key,
+                ...data[key]
+              };
+              if (post.tags === "Heading") {
+                headingsArray.push(post);
+              } else if (post.tags === "Sub Heading Post") {
+                subHeadingPostsArray.push(post);
+              } else if (post.tags === "Simple Post") {
+                simplePostsArray.push(post);
+              }
+            });
+
+            setHeadings(headingsArray);
+            setSubHeadingPosts(subHeadingPostsArray);
+            setSimplePosts(simplePostsArray);
+          } else {
+            setHeadings([]);
+            setSubHeadingPosts([]);
+            setSimplePosts([]);
+          }
+          setLoading(false);
+        });
+      } catch (error) {
+        console.error('Error fetching UAE posts:', error);
+        setLoading(false);
+      }
     };
 
-    // Call the fetchData function
     fetchData();
-
-    // Check if viewport is mobile on initial render
-    setIsMobile(window.innerWidth <= 768);
-
-    // Event listener to check if viewport changes to mobile
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-
-    window.addEventListener('resize', handleResize);
-
-    // Clean up event listener
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
   }, []);
 
-  console.log("Render - Body Data:", bodyData);
+  console.log("Render - Headings:", headings);
+  console.log("Render - Sub Heading Posts:", subHeadingPosts);
+  console.log("Render - Simple Posts:", simplePosts);
 
   return (
     <>
       <Navbar navItems={navItems} />
-      <Header title={'SHARJA'} />
-      {isMobile ? null : <Navbar2 navItem2={navItem2} />}
-      <Navbar3 navItem3={navItem3} />
-      <Bodycont className="end" body={body} />
-      <Footer />
-      
+      <Header title={'Sharjha'} />
+      <Navbar2 navItem2={navItem2} />
+      {/* <Navbar3 navItem3={navItem3} /> */}
+      {/* Render Bodycont only if posts have been fetched */}
+      {loading ? <p>Loading...</p> : <Bodycont headings={headings} subHeadingPosts={subHeadingPosts} simplePosts={simplePosts} />}
     </>
   );
 }

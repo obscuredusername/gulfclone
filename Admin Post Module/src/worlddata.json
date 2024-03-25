@@ -1,0 +1,149 @@
+{
+  "world": [
+    [
+      {
+        "id": 1,
+        "picture": "/putin.jpg",
+        "summary": "Buffer zone planned in Ukraine to protect Russia from cross-border shelling and attacks",
+        "title": "Putin extends rule in exceptional Russia poll win"
+      }
+    ],
+    [
+      {
+        "id": 2,
+        "picture": "/world-2.jpg",
+        "summary": "",
+        "title": "Polish leader Walesa seeks unity to build better world"
+      }
+    ],
+    [
+      {
+        "id": 3,
+        "title": "Famine imminent in north Gaza, ‘unprecedented’ crisis"
+      },
+      {
+        "id": 4,
+        "title": "Israel-Gaza war: What's UN criteria to declare famine?"
+      }
+    ],
+    [
+      {
+        "id": 1,
+        "picture": "/megan.jpg",
+        "title": "Has Meghan Markle returned to Instagram?"
+      },
+      {
+        "id": 2,
+        "picture": "/child.jpg",
+        "title": "Watch: Child tears up during prayer at Grand Mosque"
+      },
+      {
+        "id": 3,
+        "picture": "/staff.jpg",
+        "title": "50 staff to aid people of determination at Grand Mosque"
+      }
+    ],
+    [
+      {
+        "imgSrc": "/pi1.jpg",
+        "titleText": "One of the top stories from around the globe."
+      },
+      {
+        "imgSrc": "/pic2.jpg",
+        "titleText": "Another important news item from overseas."
+      },
+      {
+        "imgSrc": "/pic3.jpg",
+        "titleText": "Insights into global politics and economics."
+      },
+      {
+        "imgSrc": "/pic4.jpg",
+        "titleText": "Cultural events and happenings worldwide."
+      }
+    ],
+    [
+      {
+        "imgSrc": "/pi1.jpg",
+        "titleText": "Iconic landmarks from various countries."
+      },
+      {
+        "imgSrc": "/pic2.jpg",
+        "titleText": "Famous tourist attractions worldwide."
+      },
+      {
+        "imgSrc": "/pic3.jpg",
+        "titleText": "Traditional customs and rituals from different cultures."
+      },
+      {
+        "imgSrc": "/pic4.jpg",
+        "titleText": "Scenic views and natural wonders from around the world."
+      },
+      {
+        "imgSrc": "/pic3.jpg",
+        "titleText": "Historical sites and monuments from various continents."
+      },
+      {
+        "imgSrc": "/pic4.jpg",
+        "titleText": "Unique experiences and adventures from across the globe."
+      }
+    ],
+    {
+      "content": [
+        {
+          "imgSrc": "/pi1.jpg",
+          "titleText": "One of the world's most famous landmarks."
+        },
+        {
+          "imgSrc": "/pic2.jpg",
+          "titleText": "Iconic structure in a European capital city."
+        },
+        {
+          "imgSrc": "/pic3.jpg",
+          "titleText": "Historical monument from ancient times."
+        },
+        {
+          "imgSrc": "/pic4.jpg",
+          "titleText": "Renowned architectural marvel in a distant land."
+        },
+        {
+          "imgSrc": "/pic3.jpg",
+          "titleText": "Natural wonder from a remote corner of the earth."
+        },
+        {
+          "imgSrc": "/pic4.jpg",
+          "titleText": "Cultural heritage site recognized by UNESCO."
+        }
+      ],
+      "heading": "World"
+    },
+    {
+      "content": [
+        {
+          "imgSrc": "/pi1.jpg",
+          "titleText": "Statue of Liberty, New York"
+        },
+        {
+          "imgSrc": "/pic2.jpg",
+          "titleText": "Eiffel Tower, Paris"
+        },
+        {
+          "imgSrc": "/pic3.jpg",
+          "titleText": "Great Wall of China"
+        },
+        {
+          "imgSrc": "/pic4.jpg",
+          "titleText": "Sydney Opera House, Australia"
+        },
+        {
+          "imgSrc": "/pic3.jpg",
+          "titleText": "Colosseum, Rome"
+        },
+        {
+          "imgSrc": "/pic4.jpg",
+          "titleText": "Machu Picchu, Peru"
+        }
+      ],
+      "heading": "World"
+    }
+  ]
+}

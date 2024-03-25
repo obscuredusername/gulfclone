@@ -14,18 +14,6 @@
     background: #001627;
     z-index: 999; /* Ensure it's above other content */
   }
-
-  /* Media query for small screens */
-@media (max-width: 768px) {
-  .nbr2 {
-    display: none; /* Hide the Navbar2 component for smaller screens */
-  }
-}
-
-  .dark-purple-bg {
-    background-color: #6b2e8e; /* Dark purple color code */
-  }
-  
   .nvr
   {
     margin-top: 100px;

@@ -1,0 +1,150 @@
+{
+    "world": [
+      [
+        {
+          "id": 1,
+          "picture": "/tech-1.jpg",
+          "summary": "From foot rollers to arch tape, fix your inflamed heel with podiatrist-approved items",
+          "title": "7 best products to help with foot pain in UAE, for 2024"
+        }
+      ],
+      [
+        {
+          "id": 2,
+          "picture": "/tech-2.jpg",
+          "summary": "",
+          "title": "Today’s best Amazon deal: Samsung Galaxy Watch6"
+        }
+      ],
+      [
+        {
+          "id": 3,
+          "title": "5 best fitness trackers, in UAE, for 2024"
+        },
+        {
+          "id": 4,
+          "title": "Build a smart home: 5 best smart speakers in UAE, 2024"
+        }
+      ],
+      [
+        {
+          "id": 1,
+          "picture": "/tech-3.jpg",
+          "title": "5 best earbuds and in-ear headphones in UAE, for 2024"
+        },
+        {
+          "id": 2,
+          "picture": "/child.jpg",
+          "title": "Watch: Child tears up during prayer at Grand Mosque"
+        },
+        {
+          "id": 3,
+          "picture": "/tech-4.jpg",
+          "title": "5 best ultrawide monitors in UAE, for 2024"
+        }
+      ],
+      [
+        {
+          "imgSrc": "/pi1.jpg",
+          "titleText": "One of the top stories from around the globe."
+        },
+        {
+          "imgSrc": "/pic2.jpg",
+          "titleText": "Another important news item from overseas."
+        },
+        {
+          "imgSrc": "/pic3.jpg",
+          "titleText": "Insights into global politics and economics."
+        },
+        {
+          "imgSrc": "/pic4.jpg",
+          "titleText": "Cultural events and happenings worldwide."
+        }
+      ],
+      [
+        {
+          "imgSrc": "/pi1.jpg",
+          "titleText": "Iconic landmarks from various countries."
+        },
+        {
+          "imgSrc": "/pic2.jpg",
+          "titleText": "Famous tourist attractions worldwide."
+        },
+        {
+          "imgSrc": "/pic3.jpg",
+          "titleText": "Traditional customs and rituals from different cultures."
+        },
+        {
+          "imgSrc": "/pic4.jpg",
+          "titleText": "Scenic views and natural wonders from around the world."
+        },
+        {
+          "imgSrc": "/pic3.jpg",
+          "titleText": "Historical sites and monuments from various continents."
+        },
+        {
+          "imgSrc": "/pic4.jpg",
+          "titleText": "Unique experiences and adventures from across the globe."
+        }
+      ],
+      {
+        "content": [
+          {
+            "imgSrc": "/pi1.jpg",
+            "titleText": "One of the world's most famous landmarks."
+          },
+          {
+            "imgSrc": "/pic2.jpg",
+            "titleText": "Iconic structure in a European capital city."
+          },
+          {
+            "imgSrc": "/pic3.jpg",
+            "titleText": "Historical monument from ancient times."
+          },
+          {
+            "imgSrc": "/pic4.jpg",
+            "titleText": "Renowned architectural marvel in a distant land."
+          },
+          {
+            "imgSrc": "/pic3.jpg",
+            "titleText": "Natural wonder from a remote corner of the earth."
+          },
+          {
+            "imgSrc": "/pic4.jpg",
+            "titleText": "Cultural heritage site recognized by UNESCO."
+          }
+        ],
+        "heading": "World"
+      },
+      {
+        "content": [
+          {
+            "imgSrc": "/pi1.jpg",
+            "titleText": "Statue of Liberty, New York"
+          },
+          {
+            "imgSrc": "/pic2.jpg",
+            "titleText": "Eiffel Tower, Paris"
+          },
+          {
+            "imgSrc": "/pic3.jpg",
+            "titleText": "Great Wall of China"
+          },
+          {
+            "imgSrc": "/pic4.jpg",
+            "titleText": "Sydney Opera House, Australia"
+          },
+          {
+            "imgSrc": "/pic3.jpg",
+            "titleText": "Colosseum, Rome"
+          },
+          {
+            "imgSrc": "/pic4.jpg",
+            "titleText": "Machu Picchu, Peru"
+          }
+        ],
+        "heading": "World"
+      }
+    ]
+  }
+  
