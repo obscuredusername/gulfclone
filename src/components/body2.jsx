@@ -1,16 +1,16 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-function ThreePosts({ body }) {
+function ThreePosts({body}) {
 
   return (
     <div className='container mt-5'>
       <div className='row bodymain'>
         {body.map(post => (
-          <div key={post.id} className='col-lg-4 col-md-6 mb-4'>
+          <div key={post.id} className='col-md-4'>
             <div className='' style={{ position: 'relative' }}>
               <div style={{ display: 'flex' }}>
-                <img className='p2ig img-fluid' src={post.picture} alt={post.title} />
+                <img className='p2ig' src={post.picture} alt={post.title} />
                 <p className='p2heading'>{post.title}</p>
               </div>
             </div>
