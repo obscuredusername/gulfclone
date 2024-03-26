@@ -78,6 +78,7 @@ function Main() {
        <Navbar3 navItem3={navItem3} /> 
       {/* Render Bodycont only if posts have been fetched */}
       {loading ? <p>Loading...</p> : <Bodycont headings={headings} subHeadingPosts={subHeadingPosts} simplePosts={simplePosts} />}
+      <Footer/>
     </>
   );
 }
