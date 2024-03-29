@@ -24,6 +24,9 @@ const dummyData = [
     picture: "pic5.jpg"
   }
 ];
+
+
+
 const dummyData1 = [
   {
     imgSrc: "tech-1.jpg",

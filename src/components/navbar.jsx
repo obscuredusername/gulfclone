@@ -1,74 +1,17 @@
-// Navbar.js
-import React, { useState, useEffect } from 'react';
-import '../index.css';
-
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,700,0,200" />
+import { useState, useEffect } from 'react';
+import Offcanvas from 'react-bootstrap/Offcanvas';
 
 function Navbar({ navItems }) {
-  const [scrolled, setScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isMobileView, setIsMobileView] = useState(window.innerWidth <= 768); // Adjust the breakpoint as needed
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const offset = window.scrollY;
-      if (offset > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    };
-
-    const handleResize = () => {
-      setIsMobileView(window.innerWidth <= 768); // Adjust the breakpoint as needed
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    window.addEventListener('resize', handleResize);
-
-    // Clean up the event listeners
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(prevState => !prevState);
-    console.log('Mobile menu toggled:', isMobileMenuOpen);
-  };
-
   return (
-    <div className={scrolled ? 'nbr scrolled' : 'nbr'}>
- {!isMobileView && (
-  <p className={scrolled ? 'nbr-coupon scrolled' : 'nbr-coupon'}>Coupons</p>
-)}
-
-      
-      {!isMobileView && navItems.map((item, index) => (
-        <a key={index} href={item.link} className={scrolled ? 'nav-link scrolled' : 'nav-link'} style={{ color: "white",zIndex:"999" }}>
+    <div className="nbr">
+      <p className="nbr-coupon">Coupons</p>
+      {navItems.map((item, index) => (
+        <a key={index} href={item.link} className="nav-link">
           {item.text}
         </a>
       ))}
-      {isMobileView && (
-        <div  onClick={toggleMobileMenu}>
-        <button class="dropbtn"><span className="material-symbols-outlined">menu</span></button>
-        </div>
-      )}
-
-      {isMobileMenuOpen && (
-        <div class="dropdown" onClick={toggleMobileMenu}>
-        {navItems.map((item, index) => (
-        <a key={index} href={item.link} className={scrolled ? 'nav-link scrolled' : 'nav-link'} style={{ color: "white",zIndex:"999" }}>
-          {item.text}
-        </a>
-    ))}
-  </div>
-)}
-
-
-      <div className='sidebtn'>
-        <div className='pr-subs'>
+      <div className="sidebtn">
+        <div className="pr-subs">
           <button className="bn-subs">Subscribe</button>
         </div>
         <button className="btn-custom">
@@ -85,4 +28,80 @@ function Navbar({ navItems }) {
   );
 }
 
-export default Navbar;
+function SideNav({ navItems }) {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  return (
+    <>
+      <button 
+        className="dropbtn" 
+        onClick={handleShow} 
+        style={{ 
+          backgroundColor: '#001627', 
+          width: '100%',
+          textAlign: 'left',
+          paddingLeft: '5px', 
+          paddingTop: '5px', 
+          marginLeft: '0', 
+          color: 'white' // Set text color to white
+        }}
+      >
+        <span className="material-symbols-outlined" style={{ color: 'white' }}>menu</span> {/* Set icon color to white */}
+      </button>
+
+      <Offcanvas show={show} onHide={handleClose} className="sidenav-offcanvas">
+        <Offcanvas.Header closeButton style={{ backgroundColor: '#001627', color: 'white' }}>
+          <Offcanvas.Title>Menu</Offcanvas.Title>
+        </Offcanvas.Header>
+        <Offcanvas.Body style={{ backgroundColor: '#001627', color: 'white' }}>
+          <ul style={{ listStyle: 'none' }}> {/* Set list color to white */}
+            {navItems.map((item, index) => (
+              <li key={index}>
+                <a href={item.link} style={{ color: 'white' }}>{item.text}</a> {/* Set link text color to white */}
+              </li>
+            ))}
+          </ul>
+          <div className="pr-subs">
+            <button className="bn-subs">Subscribe</button>
+          </div>
+          <button className="btn-custom">
+            <span className="material-symbols-outlined" style={{ color: 'white' }}>person</span> {/* Set icon color to white */}
+          </button>
+          <button className="btn-custom">
+            <span className="material-symbols-outlined" style={{ color: 'white' }}>notifications</span> {/* Set icon color to white */}
+          </button>
+          <button className="btn-custom">
+            <span className="material-symbols-outlined" style={{ color: 'white' }}>search</span> {/* Set icon color to white */}
+          </button>
+        </Offcanvas.Body>
+      </Offcanvas>
+    </>
+  );
+}
+
+function Navigation({ navItems }) {
+  const [isMobileView, setIsMobileView] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobileView(window.innerWidth <= 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  if (isMobileView) {
+    return <SideNav navItems={navItems} />;
+  } else {
+    return <Navbar navItems={navItems} />;
+  }
+}
+
+export default Navigation;
