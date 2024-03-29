@@ -128,6 +128,11 @@ const CreatePostForm = () => {
               <option value="Heading">Heading</option>
               <option value="Sub Heading Post">Sub Heading Post</option>
               <option value="Simple Post">Simple Post</option>
+              <option value="Three Post 1">Three Post Portion 1</option>
+              <option value="Three Post 2">Three Post Portion 2</option>
+              <option value="Three Post 3">Three Post Portion 3</option>
+              <option value="Three Post 4">Three Post Portion 4</option>
+              
             </select>
           </div>
           <div className="form-group buttons">
