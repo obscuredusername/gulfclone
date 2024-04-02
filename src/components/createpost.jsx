@@ -1,49 +1,148 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
-import ReactQuill from "react-quill";
-import 'react-quill/dist/quill.snow.css';
+import React, { useState } from 'react';
+import './CreatePostForm.css';
+import { addPostToFirebase  } from '../firebaseOperation'; // Update path accordingly
 
-export default function CreatePost() {
-    const [title, setTitle] = useState('');
-    const [summary, setSummary] = useState('');
-    const [content, setContent] = useState('');
-    const [selectedFile, setSelectedFile] = useState(null);
+const CreatePostForm = () => {
+  const [title, setTitle] = useState('');
+  const [summary, setSummary] = useState('');
+  const [description, setDescription] = useState('');
+  const [category, setCategory] = useState('');
+  const [tags, setTags] = useState('');
+  const [isPrivate, setIsPrivate] = useState(false);
+  const [imageUrl, setImageUrl] = useState('');
 
-    const navigate = useNavigate(); // Initialize useNavigate
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    
+    try {
+      // Create a new post object with the form data
+      const newPost = {
+        title,
+        summary,
+        description,
+        tags,
+        isPrivate,
+        imageUrl
+      };
 
-    async function createNewPost(ev) {
-        ev.preventDefault();
+      // Add the new post to Firebase
+      addPostToFirebase(category, newPost);
 
-        const data = new FormData();
-        data.set('title', title);
-        data.set('summary', summary);
-        data.set('content', content);
-
-        if (selectedFile) {
-            data.append('file', selectedFile);
-        }
-
-        const response = await fetch('http://localhost:4000/post', {
-            method: 'POST',
-            body: data,
-            credentials:'include'
-        });
-
-        if (response.ok) {
-            navigate('/'); // Redirect to the home page on success
-        }
+      console.log('Post submitted successfully!');
+      
+      // Reset form fields after submission
+      setTitle('');
+      setSummary('');
+      setDescription('');
+      setCategory('');
+      setTags('');
+      setIsPrivate(false);
+      setImageUrl('');
+    } catch (error) {
+      console.error('Error submitting post: ', error);
     }
+  };
 
-    return (
-        <form onSubmit={createNewPost}>
-            <input type="text" placeholder="Title" value={title} onChange={ev => setTitle(ev.target.value)} />
-            <input type="text" placeholder="Summary" value={summary} onChange={ev => setSummary(ev.target.value)} />
-            <input type="file" onChange={ev => setSelectedFile(ev.target.files[0])} />
-            <ReactQuill value={content} onChange={newValue => setContent(newValue)} />
-            <button style={{ marginTop: '10px' }}>
-                Create Post
-            </button>
+  return (
+    <div className="app">
+      <header>
+        <nav className="navbar">
+          <div className="navbar-brand">GulfNews</div>
+          <ul className="navbar-nav">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Articles</a></li>
+            <li><a href="#">About</a></li>
+          </ul>
+        </nav>
+      </header>
+      <div className="create-post-container">
+        <h1 className="create-post-heading">ADDING POST TO GULFNEWS</h1>
+        <form onSubmit={handleSubmit} className="create-post-form">
+          <div className="form-group">
+            <label htmlFor="title" className="title-label">Title</label>
+            <input
+              type="text"
+              id="title"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+              placeholder="Post Title"
+              className="form-input title-input"
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="Summary" className="title-label">Summary</label>
+            <input
+              type="text"
+              id="title"
+              value={summary}
+              onChange={(e) => setSummary(e.target.value)}
+              placeholder="Post Summary"
+              className="form-input title-input"
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="description">Description</label>
+            <textarea
+              id="description"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              placeholder="Write your post description here..."
+              className="form-input description-input"
+              rows={6}
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="imageUrl">Image URL</label>
+            <input
+              type="text"
+              id="imageUrl"
+              value={imageUrl}
+              onChange={(e) => setImageUrl(e.target.value)}
+              placeholder="Enter image URL"
+              className="form-input"
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="category">Category</label>
+            <select
+              id="category"
+              value={category}
+              onChange={(e) => setCategory(e.target.value)}
+              className="form-input"
+            >
+              <option value="">Select a category for your post</option>
+              <option value="UAE">UAE</option>
+              <option value="TECH">TECH</option>
+              <option value="WORLD">WORLD</option>
+            </select>
+          </div>
+          <div className="form-group">
+            <label htmlFor="tags">Tags</label>
+            <select
+              id="tags"
+              value={tags}
+              onChange={(e) => setTags(e.target.value)}
+              className="form-input"
+            >
+              <option value="">Select a tag type</option>
+              <option value="Heading">Heading</option>
+              <option value="Sub Heading Post">Sub Heading Post</option>
+              <option value="Simple Post">Simple Post</option>
+              <option value="Three Post 1">Three Post Portion 1</option>
+              <option value="Three Post 2">Three Post Portion 2</option>
+              <option value="Three Post 3">Three Post Portion 3</option>
+              <option value="Three Post 4">Three Post Portion 4</option>
+              
+            </select>
+          </div>
+          <div className="form-group buttons">
+            <button type="submit" className="btn btn-primary submitbtn">Submit</button>
+            <button type="button" className="btn btn-secondary cancelbtn">Cancel</button>
+          </div>
         </form>
-    ) 
-}
- 
+      </div>
+    </div>
+  );
+};
+
+export default CreatePostForm;

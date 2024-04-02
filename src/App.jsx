@@ -9,6 +9,7 @@ import Sports from './components/Sports';
 import CreatePost from './components/createpost';
 import FullPostPage from './components/FullPostPage';
 import LoginForm from './components/Login';
+import Login from './components/Login';
 
 const samplePosts = [
   {
@@ -34,6 +35,8 @@ function App() {
         <Route path="/admin" element={<CreatePost />} />
         {/* Pass samplePosts array as a prop to FullPostPage */}
         <Route path="/post/:postId" element={<FullPostPage />} />
+        <Route path="/login" element={<Login/>} />
+        <Route path="/createpost" element={<CreatePost/>} />
       </Routes>
     </BrowserRouter>
   );

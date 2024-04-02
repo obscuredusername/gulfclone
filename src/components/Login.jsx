@@ -1,68 +1,41 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { getDatabase, ref, onValue } from 'firebase/database';
-import { auth } from '../firebase'; // Import Firebase authentication
-import { signInWithEmailAndPassword } from 'firebase/auth';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate for navigation
 
-const LoginForm = () => {
-
-
-    const navigate = useNavigate(); // Initialize useNavigate
-
+const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState(null);
+  const [error, setError] = useState('');
+  const navigate = useNavigate(); // Initialize useNavigate hook
 
-  const handleLogin = async (e) => {
-    e.preventDefault();
+  // Your data fetching logic goes here
+  const fetchData = async () => {
 
     try {
-      // Authenticate user with email and password
-      await signInWithEmailAndPassword(auth, email, password);
-      navigate('/Main');
-      // Redirect user to dashboard or another page upon successful login
+      const db = getDatabase();
+      const loginRef = ref(db, 'login');
 
+      onValue(loginRef, (snapshot) => {
+        const data = snapshot.val();
+        console.log(data.Email)
+
+        if (data.Email===email && data.Password===password){
+          navigate('/createpost');
+        }
+
+        // Add your logic to handle the fetched data
+      });
     } catch (error) {
-      setError(error.message);
+      console.error('Error fetching data:', error);
     }
   };
 
-  // Fetching data from Firebase Realtime Database
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const db = getDatabase(app);
-        const loginRef = ref(db, 'login');
-
-        onValue(loginRef, (snapshot) => {
-          const data = snapshot.val();
-          if (data) {
-            // Check if email and password match
-            const userData = Object.values(data);
-            const user = userData.find((user) => user.Email === email && user.Password === password);
-
-            if (user) {
-              // If user is found, proceed with authentication
-              handleLogin();
-            } else {
-              setError('Invalid email or password');
-            }
-          } else {
-            setError('No users found');
-          }
-        });
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    };
-
-    fetchData();
-  }, [email, password]);
+ 
 
   return (
     <div>
       <h2>Login</h2>
-      <form onSubmit={handleLogin}>
+      <form>
         <div>
           <label>Email</label>
           <input
@@ -82,10 +55,10 @@ const LoginForm = () => {
           />
         </div>
         {error && <div>{error}</div>}
-        <button type="submit">Login</button>
+        <button  onClick={fetchData}>Login</button>
       </form>
     </div>
   );
 };
 
-export default LoginForm;
+export default Login;
