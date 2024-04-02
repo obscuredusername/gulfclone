@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { getDatabase, ref, onValue } from 'firebase/database';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate for navigation
+import './Login.css'; // Import CSS file for styling
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -10,33 +11,29 @@ const Login = () => {
 
   // Your data fetching logic goes here
   const fetchData = async () => {
-
     try {
       const db = getDatabase();
       const loginRef = ref(db, 'login');
 
       onValue(loginRef, (snapshot) => {
         const data = snapshot.val();
-        console.log(data.Email)
-
-        if (data.Email===email && data.Password===password){
-          navigate('/createpost');
+        // Check if user credentials are valid
+        if (data && data.Email === email && data.Password === password) {
+          navigate('/createpost'); // Navigate to createpost route on successful login
+        } else {
+          setError('Invalid email or password');
         }
-
-        // Add your logic to handle the fetched data
       });
     } catch (error) {
       console.error('Error fetching data:', error);
     }
   };
 
- 
-
   return (
-    <div>
+    <div className="login-container">
       <h2>Login</h2>
-      <form>
-        <div>
+      <form className="login-form">
+        <div className="form-group">
           <label>Email</label>
           <input
             type="email"
@@ -45,7 +42,7 @@ const Login = () => {
             required
           />
         </div>
-        <div>
+        <div className="form-group">
           <label>Password</label>
           <input
             type="password"
@@ -54,8 +51,8 @@ const Login = () => {
             required
           />
         </div>
-        {error && <div>{error}</div>}
-        <button  onClick={fetchData}>Login</button>
+        {error && <div className="error-message">{error}</div>}
+        <button className="login-btn" onClick={fetchData}>Login</button>
       </form>
     </div>
   );

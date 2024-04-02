@@ -25,7 +25,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<LoginForm />} />
+        <Route path="/" element={<Main />} />
         <Route path="/Main" element={<Main />} />
         <Route path="/uae" element={<UAE />} />
         <Route path="/world" element={<World />} />
@@ -35,6 +35,8 @@ function App() {
         <Route path="/admin" element={<CreatePost />} />
         {/* Pass samplePosts array as a prop to FullPostPage */}
         <Route path="/post/:postId" element={<FullPostPage />} />
+
+
         <Route path="/login" element={<Login/>} />
         <Route path="/createpost" element={<CreatePost/>} />
       </Routes>
