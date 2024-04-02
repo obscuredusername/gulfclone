@@ -1,5 +1,6 @@
 import { initializeApp } from "firebase/app";
-import {getFirestore} from '@firebase/firestore'
+import { getFirestore } from '@firebase/firestore';
+
 const firebaseConfig = {
   apiKey: "AIzaSyDfkxE69-gv_KTAsHKWAm8CvKqM3uvoPbI",
   authDomain: "gulfclone-cf8bf.firebaseapp.com",
@@ -10,6 +11,7 @@ const firebaseConfig = {
   measurementId: "G-87XPNRWF8S"
 };
 
-
 const app = initializeApp(firebaseConfig);
-export const firestore = getFirestore(app)
+export const firestore = getFirestore(app); // Export firestore from Firebase
+
+export default app; // Export app as the default export

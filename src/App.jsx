@@ -8,6 +8,7 @@ import Tech from './components/tech';
 import Sports from './components/Sports';
 import CreatePost from './components/createpost';
 import FullPostPage from './components/FullPostPage';
+import LoginForm from './components/Login';
 
 const samplePosts = [
   {
@@ -23,7 +24,8 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Main />} />
+        <Route path="/" element={<LoginForm />} />
+        <Route path="/Main" element={<Main />} />
         <Route path="/uae" element={<UAE />} />
         <Route path="/world" element={<World />} />
         <Route path="/Sports" element={<Sports />} />

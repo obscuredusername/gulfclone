@@ -14,11 +14,7 @@ export const navItem2 = [
     { text: 'Sports', link: '/sports' },
     { text: 'UAE Jobs', link: '/ujobs' },
     { text: 'entertainment', link: '/entertainment' },
-    { text: 'About', link: '/about' },
-    { text: 'Contact', link: '/contact' },
-    { text: 'Home', link: '/' },
-    { text: 'About', link: '/about' },
-    { text: 'Contact', link: '/contact' },
+   
    
     
     // Add more items as needed
