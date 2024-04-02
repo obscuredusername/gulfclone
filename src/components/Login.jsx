@@ -4,6 +4,9 @@ import { useNavigate } from 'react-router-dom'; // Import useNavigate for naviga
 import './Login.css'; // Import CSS file for styling
 
 const Login = () => {
+
+  console.log("??")
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -11,6 +14,7 @@ const Login = () => {
 
   // Your data fetching logic goes here
   const fetchData = async () => {
+
     try {
       const db = getDatabase();
       const loginRef = ref(db, 'login');
